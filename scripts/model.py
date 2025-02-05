@@ -12,6 +12,8 @@ def get_Query(text : str):
 - username: String (255, Not Null) → Username
 - email: String (255, Unique, Not Null) → User Email
 - password: String (255, Not Null) → User Password
+- role :String(255,Not Null) -> User role
+- created_by = Integer, ForeignKey("users.id")
 
 ### Table 2: "TODO" ###
 - id: Integer (Primary Key, Auto Increment) → Task ID

@@ -7,12 +7,15 @@ class UserCreate(BaseModel):
     username: str
     email: EmailStr
     password: str
+    role: str
+    # created_by: Optional[int] = None
 
 class UserResponse(BaseModel):
     id: int
     username: str
     email: EmailStr
-    # tasks: List["TaskResponse"] = []
+    role : str
+    created_by : int
 
     class config:
         orm_mode = True
@@ -44,3 +47,6 @@ class UserTaskResponse(BaseModel):
     tasks: List[TaskResponse]
 
 
+class UserLogin(BaseModel):
+    email: EmailStr
+    password : str
